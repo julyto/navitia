@@ -135,7 +135,7 @@ def car_park_space_get_new_information_ok_test():
     star_response = {
         "records": [
             {
-                "datasetid": "tco-parcsrelais-new-etat-tr",
+                "datasetid": "tco-parcsrelais-etat-tr-maquette",
                 "fields": {
                     "jrdinfosoliste": 4,
                     "capacitesoliste": 10,
@@ -160,7 +160,7 @@ def car_park_space_get_new_information_ok_test():
 
 
 def car_park_space_get_new_information_no_data_test():
-    star_response = {"records": [{"datasetid": "tco-parcsrelais-new-etat-tr", "fields": {"idparc": "42"}}]}
+    star_response = {"records": [{"datasetid": "tco-parcsrelais-etat-tr-maquette", "fields": {"idparc": "42"}}]}
     provider = StarProvider("http://fake.url", {'Keolis Rennes'}, 'test', 42, username=None)
     empty_parking = ParkingPlaces(available=None, occupied=None, available_PRM=None, occupied_PRM=None)
     with requests_mock.Mocker() as m:
@@ -178,7 +178,7 @@ def car_park_space_get_new_information_ok_without_PMR_test():
     star_response = {
         "records": [
             {
-                "datasetid": "tco-parcsrelais-new-etat-tr",
+                "datasetid": "tco-parcsrelais-etat-tr-maquette",
                 "fields": {
                     "jrdinfosoliste": 4,
                     "capacitesoliste": 10,
